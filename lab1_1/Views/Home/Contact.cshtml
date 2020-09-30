@@ -1,0 +1,26 @@
+﻿@model lab1_1.Models.Sklad
+@{
+    ViewBag.Title = "Додавання товару";
+}
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="tovar_num" class="control-label">Номер товару</label>
+        <input type="number" asp-for="tovar_num" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="kilk" class="control-label">Кількість</label>
+        <input type="number" asp-for="kilk" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="misce" class="control-label">Місце на складі</label>
+        <input type="text" asp-for="misce" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="prub" class="control-label">Дата постачання товару</label>
+        <input type="datetime" asp-for="prub" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>

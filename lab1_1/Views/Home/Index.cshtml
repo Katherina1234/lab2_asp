@@ -1,0 +1,38 @@
+﻿@model IEnumerable<lab1_1.Models.Sklad>
+@{
+    double sum = 0;
+}
+<h2>Товари на складі</h2>
+
+<table class="table" id="cl2">
+
+    <tr class="cl3"><td>№</td><td>Назва</td><td>Матеріал</td><td>Ціна</td><td>Кількість</td><td>Дата постачання</td><td>Місце на складі</td><td>Вартість</td><td></td></tr>
+    @foreach (var item in Model)
+    {
+
+        double k = 0;
+
+        <tr>
+            <td>@item.Id</td>
+
+            @foreach (var item1 in ViewBag.Tovars)
+            {
+                if (item1.id == item.tovar_num)
+                {
+
+                    k = item1.vartist;
+                    sum += item.kilk * k;
+                    <td>@item1.name</td>
+                    <td>@item1.material</td>
+                    <td>@item1.vartist</td>}
+            }
+            <td>@item.kilk</td>
+            <td>@item.prub</td>
+            <td>@item.misce</td>
+            <td>@(item.kilk * k)</td>
+
+
+        </tr>
+    }
+    <tr><td colspan="7">Всього товарів на суму</td><td>@sum</td></tr>
+</table>

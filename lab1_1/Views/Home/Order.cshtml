@@ -1,0 +1,9 @@
+﻿@model IEnumerable<lab1_1.Models.Tovar>
+<table>
+    @foreach (var item in Model)
+    {
+        <tr><td><input type="text" class="form-control" id="n2" value="@item.name" /></td><td><input type="text" class="form-control" id="n3" value="@item.vartist" /></td><td><input type="number" class="form-control" id="n1" /></td></tr>
+    }
+</table>
+<input type="text" class="form-control" id="n5" />
+
